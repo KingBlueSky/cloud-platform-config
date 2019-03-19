@@ -1,0 +1,28 @@
+spring:
+    profiles:
+        active: default
+    http:
+        encoding:
+            force: true
+            charset: UTF-8
+            enabled: true
+        multipart:
+            enabled: true
+            max-file-size: 100MB
+            max-request-size: 100MB
+
+#    rabbitmq:
+#        host: ${rabbitmq.host}
+#        port: ${rabbitmq.port}
+#        username: ${rabbitmq.username}
+#        password: ${rabbitmq.password}
+#        virtual-host: ${rabbitmq.virtual-host}
+
+eureka:
+    client:
+        healthcheck:
+            enabled: true
+
+server:
+    tomcat:
+        uri-encoding: UTF-8
