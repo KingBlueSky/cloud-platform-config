@@ -1,0 +1,87 @@
+spring:
+    profiles:
+        active: default
+    http:
+        encoding:
+            force: true
+            charset: UTF-8
+            enabled: true
+    datasource:
+      url: ${vehiclerefuel.delivery.datasource.url}
+      driver-class-name: ${vehiclerefuel.delivery.datasource.driver-class}
+      username: ${vehiclerefuel.delivery.datasource.username}
+      password: ${vehiclerefuel.delivery.datasource.password}
+      type: ${vehiclerefuel.delivery.datasource.type}
+      druid:
+        initial-size: ${vehiclerefuel.delivery.datasource.initial-size}
+        min-idle: ${vehiclerefuel.delivery.datasource.min-idle}
+        max-active: ${vehiclerefuel.delivery.datasource.max-active}
+        max-wait: ${vehiclerefuel.delivery.datasource.max-wait}
+        pool-prepared-statements: ${vehiclerefuel.delivery.datasource.pool-prepared-statements}
+        max-pool-prepared-statement-per-connection-size: ${vehiclerefuel.delivery.datasource.max-pool-prepared-statement-per-connection-size}
+        connection-properties: ${vehiclerefuel.delivery.datasource.connection-properties}
+#        filters: ${common.delivery.datasource.filters}
+    rabbitmq:
+        host: ${rabbitmq.host}
+        port: ${rabbitmq.port}
+        username: ${rabbitmq.username}
+        password: ${rabbitmq.password}
+        virtual-host: ${rabbitmq.virtual-host}
+
+#    redis:
+#      pool:
+#          host: ${spring.redis.host}
+#          port: ${spring.redis.port}
+#          password: ${spring.redis.password}
+#          testOnBoorow: ${spring.redis.testOnBoorow}
+#          testWhileIdle: ${spring.redis.testWhileIdle}
+#          max-idle: ${spring.redis.pool.max-idle}
+#          min-idle: ${spring.redis.pool.min-idle}
+#          max-active: ${spring.redis.pool.max-active}
+#          max-wait: ${spring.redis.pool.max-wait}
+#    redis:
+#          host: ${spring.redis.host}
+#          post: ${spring.redis.port}
+#          password: ${spring.redis.password}
+#      config:
+#
+
+eureka:
+    instance:
+        prefer-ip-address: true
+    client:
+        healthcheck:
+            enabled: true
+
+server:
+    tomcat:
+        uri-encoding: UTF-8
+
+mybatis:
+    config-location: classpath:mybatis.xml
+    mapper-locations: mapper/*.xml
+
+feign:
+    hystrix:
+        enabled: true
+    compression:
+        request:
+            enable: true
+        response:
+            enable: true
+    httpclient:
+        enable: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+
+

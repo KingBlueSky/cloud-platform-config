@@ -8,22 +8,6 @@ spring:
             enabled: true
             max-file-size: 100MB
             max-request-size: 100MB
-    # rabbitmq:
-    #     host: ${rabbitmq.host}
-    #     port: ${rabbitmq.port}
-    #     username: ${rabbitmq.username}
-    #     password: ${rabbitmq.password}
-    #     virtual-host: ${rabbitmq.virtual-host}
-    redis:
-        sentinel:
-            master: ${spring.redis.sentinel.master}
-            nodes: ${spring.redis.sentinel.nodes}
-        pool:
-            max-idle: ${spring.redis.pool.max-idle}
-            min-idle: ${spring.redis.pool.min-idle}
-            max-active: ${spring.redis.pool.max-active}
-            max-wait: ${spring.redis.pool.max-wait}
-
 eureka:
     instance:
         prefer-ip-address: true
@@ -52,11 +36,35 @@ zuul:
             stripPrefix: true
             sensitiveHeaders:
             serviceId: information-center
-        # order-center:
-        #     path: /order-center/**
-        #     stripPrefix: true
-        #     sensitiveHeaders:
-        #     serviceId: order-center
+        user-center:
+            path: /user-center/**
+            stripPrefix: true
+            sensitiveHeaders:
+            serviceId: user-center
+        tenant-center:
+            path: /tenant-center/**
+            stripPrefix: true
+            sensitiveHeaders:
+            serviceId: tenant-center
+        vehicle-refuel-center:
+            path: /vehicle-refuel-center/**
+            stripPrefix: true
+            sensitiveHeaders:
+            serviceId: vehicle-refuel-center
+        timtask-center:
+            path: /timtask-center/**
+            stripPrefix: true
+            sensitiveHeaders:
+            serviceId: timtask-center
+        campaign-center:
+            path: /campaign-center/**
+            stripPrefix: true
+            sensitiveHeaders:
+            serviceId: campaign-center
+
+
+
+
 
 
 
