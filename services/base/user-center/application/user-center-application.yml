@@ -28,15 +28,15 @@ spring:
     #     password: ${rabbitmq.password}
     #     virtual-host: ${rabbitmq.virtual-host}
 
-    redis:
-        sentinel:
-            master: ${spring.redis.sentinel.master}
-            nodes: ${spring.redis.sentinel.nodes}
-        pool:
-            max-idle: ${spring.redis.pool.max-idle}
-            min-idle: ${spring.redis.pool.min-idle}
-            max-active: ${spring.redis.pool.max-active}
-            max-wait: ${spring.redis.pool.max-wait}
+#     redis:
+#         sentinel:
+#             master: ${spring.redis.sentinel.master}
+#             nodes: ${spring.redis.sentinel.nodes}
+#         pool:
+#             max-idle: ${spring.redis.pool.max-idle}
+#             min-idle: ${spring.redis.pool.min-idle}
+#             max-active: ${spring.redis.pool.max-active}
+#             max-wait: ${spring.redis.pool.max-wait}
 eureka:
     instance:
         prefer-ip-address: true
