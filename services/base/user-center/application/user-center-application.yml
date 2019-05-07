@@ -6,20 +6,20 @@ spring:
             force: true
             charset: UTF-8
             enabled: true
-    datasource:
-      url: ${user.delivery.datasource.url}
-      driver-class-name: ${user.delivery.datasource.driver-class}
-      username: ${user.delivery.datasource.username}
-      password: ${user.delivery.datasource.password}
-      type: ${user.delivery.datasource.type}
-      druid:
-        initial-size: ${user.delivery.datasource.initial-size}
-        min-idle: ${user.delivery.datasource.min-idle}
-        max-active: ${user.delivery.datasource.max-active}
-        max-wait: ${user.delivery.datasource.max-wait}
-        pool-prepared-statements: ${user.delivery.datasource.pool-prepared-statements}
-        max-pool-prepared-statement-per-connection-size: ${user.delivery.datasource.max-pool-prepared-statement-per-connection-size}
-        connection-properties: ${user.delivery.datasource.connection-properties}
+#     datasource:
+#       url: ${user.delivery.datasource.url}
+#       driver-class-name: ${user.delivery.datasource.driver-class}
+#       username: ${user.delivery.datasource.username}
+#       password: ${user.delivery.datasource.password}
+#       type: ${user.delivery.datasource.type}
+#       druid:
+#         initial-size: ${user.delivery.datasource.initial-size}
+#         min-idle: ${user.delivery.datasource.min-idle}
+#         max-active: ${user.delivery.datasource.max-active}
+#         max-wait: ${user.delivery.datasource.max-wait}
+#         pool-prepared-statements: ${user.delivery.datasource.pool-prepared-statements}
+#         max-pool-prepared-statement-per-connection-size: ${user.delivery.datasource.max-pool-prepared-statement-per-connection-size}
+#         connection-properties: ${user.delivery.datasource.connection-properties}
 #        filters: ${common.delivery.datasource.filters}
     # rabbitmq:
     #     host: ${rabbitmq.host}
@@ -48,8 +48,8 @@ server:
     tomcat:
         uri-encoding: UTF-8
 
-mybatis:
-    mapper-locations: mapper/*.xml
+# mybatis:
+#     mapper-locations: mapper/*.xml
 
 feign:
     hystrix:
